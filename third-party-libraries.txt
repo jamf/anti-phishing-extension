@@ -1,0 +1,37 @@
+# ZecOps Anti-Phishing extension
+
+## Third party libraries
+
+libraries/browser-polyfill.min.js
+v0.7.0
+https://unpkg.com/browse/webextension-polyfill@0.7.0/dist/browser-polyfill.min.js
+
+libraries/color-hash.js
+v1.0.3
+https://github.com/zenozeng/color-hash/blob/v1.0.3/dist/color-hash.js
+
+libraries/crc32.js
+v1.2.0
+https://github.com/SheetJS/js-crc32/blob/v1.2.0/crc32.js
+
+libraries/popper.min.js
+v2.9.1
+https://unpkg.com/browse/@popperjs/core@2.9.1/dist/umd/popper.min.js
+
+libraries/psl.min.js
+v1615908188508
+https://github.com/lupomontero/psl/blob/update-date-1615908188508/dist/psl.min.js
+
+libraries/punycode.min.js
+v1.4.1
+https://github.com/bestiejs/punycode.js/blob/v1.4.1/punycode.min.js
+
+libraries/tippy.umd.min.js
+libraries/tippy.css
+v6.3.1
+https://unpkg.com/browse/tippy.js@6.3.1/dist/tippy.umd.min.js
+https://unpkg.com/browse/tippy.js@6.3.1/dist/tippy.css
+
+libraries/zip-full.min.js
+v2.2.24
+https://github.com/gildas-lormeau/zip.js/blob/v2.2.24/dist/zip-full.min.js

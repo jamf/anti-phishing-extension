@@ -1,0 +1,80 @@
+{
+  "name": "ZecOps Anti-Phishing Extension",
+  "version": "1.0.5",
+  "description": "Augment the web with indicators that help detect phishing attempts",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "anti-phishing-extension@zecops.com"
+    }
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "libraries/tippy.css",
+        "website_info.css"
+      ],
+      "js": [
+        "libraries/browser-polyfill.min.js",
+        "libraries/color-hash.js",
+        "libraries/crc32.js",
+        "libraries/popper.min.js",
+        "libraries/tippy.umd.min.js",
+        "functions.js",
+        "website_info.js",
+        "content_scripts/content_scripts.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*/*"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "libraries/browser-polyfill.min.js",
+      "libraries/psl.min.js",
+      "libraries/punycode.min.js",
+      "libraries/zip-full.min.js",
+      "functions.js",
+      "background/domain_ranking.js",
+      "background/background.js"
+    ]
+  },
+  "permissions": [
+    "https://s3.amazonaws.com/alexa-static/top-1m.csv.zip.",
+    "storage",
+    "unlimitedStorage",
+    "history",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "19": "images/icon-19.png",
+      "32": "images/icon-32.png",
+      "38": "images/icon-38.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true,
+    "chrome_style": true,
+    "open_in_tab": false
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "19": "images/icon-19.png",
+    "32": "images/icon-32.png",
+    "38": "images/icon-38.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "manifest_version": 2
+}

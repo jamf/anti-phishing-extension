@@ -1,0 +1,81 @@
+div.zecops-anti-phishing-extension-tooltip {
+    direction: ltr;
+    text-align: center;
+}
+
+div.zecops-anti-phishing-extension-tooltip * {
+    color: white;
+}
+
+div.zecops-anti-phishing-extension-tooltip a {
+    color: white;
+}
+
+div.zecops-anti-phishing-extension-tooltip hr {
+    border: 1px solid white;
+    background-color: white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-green {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 0;
+    color: #4f4;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-red {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 0;
+    color: #f44;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-warnings > div {
+    margin: 8px 0;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-domain-emoji {
+    font-size: 72px;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-domain {
+    display: inline-block;
+    word-break: break-all;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-actions {
+    display: flex;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-actions > a {
+    flex: 1;
+    display: block;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-actions > a:not(:last-child) {
+    border-right: 2px solid white;
+}
+
+div.zecops-anti-phishing-extension-tooltip
+    .zecops-anti-phishing-extension-tooltip-actions-icon {
+    margin-bottom: 4px;
+}

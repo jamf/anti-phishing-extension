@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div>
+      <h4>Inline tooltip</h4>
+
+      <label for="tooltip-warnings">
+        Show an inline tooltip in case of warnings:
+      </label>
+      <br>
+      <select name="tooltip-warnings" id="tooltip-warnings">
+        <option selected value="input">While focusing on any input (default)</option>
+        <option value="password">While focusing on a password field</option>
+        <option value="off">Never (not recommended)</option>
+      </select>
+
+      <br>
+      <br>
+
+      <label for="tooltip-no-warnings">
+        Show an inline tooltip in case there are no warnings:
+      </label>
+      <br>
+      <select name="tooltip-no-warnings" id="tooltip-no-warnings">
+        <option value="input">While focusing on any input</option>
+        <option value="password">While focusing on a password field</option>
+        <option selected value="off">Never (default)</option>
+      </select>
+
+      <h4>Misleading links</h4>
+
+      <input type="checkbox" checked name="misleading-links" id="misleading-links">
+      <label for="misleading-links">
+        Show a warning tooltip for misleading links
+      </label>
+
+      <h4>Excluded websites</h4>
+      <textarea id="excluded-websites" name="excluded-websites" rows="4" cols="50"
+        placeholder="One website per line, e.g. paypal.com or *.google.com"
+        title="One website per line, e.g. paypal.com or *.google.com"></textarea>
+
+      <br>
+      <br>
+
+      <button type="button" id="save-button" disabled>
+        Save
+      </button>
+    </div>
+    <script src="/libraries/browser-polyfill.min.js"></script>
+    <script src="/functions.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
