@@ -2,6 +2,8 @@
 
 A web extension that augments websites with additional visual information, allowing to make an informed decision about a website's legitimacy. The user can take into account context such as the origin of the link and the sensitivity of the information about to be entered.
 
+You can get more information in our blog post, [Introducing ZecOps Anti-Phishing Extension](https://blog.zecops.com/announcements/introducing-zecops-anti-phishing-extension/).
+
 ## Installing the extension
 
 ### Loading from a folder
