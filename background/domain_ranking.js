@@ -1,6 +1,6 @@
 'use strict';
 
-/* global browser, zip */
+/* global browser */
 
 class DomainRanking {
   constructor(topDomainsArray) {
@@ -129,25 +129,13 @@ class DomainRankingManager {
   }
 
   async _getTopDomainsArray(amount) {
-    const url = 'https://s3.amazonaws.com/alexa-static/top-1m.csv.zip';
+    const url = 'https://downloads.majestic.com/majestic_million.csv';
 
-    const reader = new zip.ZipReader(new zip.HttpReader(url), {
-      useWebWorkers: false
-    });
-    const entries = await reader.getEntries();
-    reader.close();
+    const data = await fetch(url).then(r => r.text());
 
-    if (entries.length !== 1) {
-      throw new Error('Expected a single file in top-1m.csv.zip');
-    }
-
-    const data = await entries[0].getData(
-      new zip.TextWriter()
-    );
-
-    let topDomainsRetrieved = data.split(/\s*\n\s*\d+,/, amount);
-    topDomainsRetrieved[0] = topDomainsRetrieved[0].replace(/^\d+,/, '');
-
+    let topDomainsRetrieved = data
+      .replace(/^.*\n(?:\d+,){2}/, '')
+      .split(/(?:,[^,]*){9}\n(?:\d+,){2}/, amount);
     return topDomainsRetrieved;
   }
 }
