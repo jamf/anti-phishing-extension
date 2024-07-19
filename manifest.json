@@ -38,14 +38,13 @@
       "libraries/browser-polyfill.min.js",
       "libraries/psl.min.js",
       "libraries/punycode.min.js",
-      "libraries/zip-full.min.js",
       "functions.js",
       "background/domain_ranking.js",
       "background/background.js"
     ]
   },
   "permissions": [
-    "https://s3.amazonaws.com/alexa-static/top-1m.csv.zip.",
+    "https://downloads.majestic.com/majestic_million.csv.",
     "storage",
     "unlimitedStorage",
     "history",

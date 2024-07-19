@@ -31,7 +31,3 @@ libraries/tippy.css
 v6.3.1
 https://unpkg.com/browse/tippy.js@6.3.1/dist/tippy.umd.min.js
 https://unpkg.com/browse/tippy.js@6.3.1/dist/tippy.css
-
-libraries/zip-full.min.js
-v2.2.24
-https://github.com/gildas-lormeau/zip.js/blob/v2.2.24/dist/zip-full.min.js
