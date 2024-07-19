@@ -5,7 +5,7 @@
 startExtension();
 
 async function startExtension() {
-  const [userId, { options }, domainInfo] = await Promise.all([
+  const [userId, { optionsOrUndefined }, domainInfo] = await Promise.all([
     getUserId(),
     browser.storage.sync.get('options'),
     browser.runtime.sendMessage({ type: 'getDomainInfo' })
@@ -14,6 +14,8 @@ async function startExtension() {
   if (!domainInfo || domainInfo.isUnsupportedPage) {
     return;
   }
+
+  const options = optionsOrUndefined || {};
 
   if (options.excludedWebsitesRegex &&
     new RegExp(options.excludedWebsitesRegex, 'i').test(domainInfo.identDomain)) {
@@ -27,29 +29,24 @@ async function startExtension() {
 
   let target;
   if (domainInfo.alertedMode) {
-    if (options && options.tooltipWarnings === 'off') {
+    if (options.tooltipWarnings === 'off') {
       target = null;
-    } else if (options && targetSelectors[options.tooltipWarnings]) {
+    } else if (targetSelectors[options.tooltipWarnings]) {
       target = targetSelectors[options.tooltipWarnings];
     } else {
       target = targetSelectors.input;
     }
   } else {
-    if (options && options.tooltipNoWarnings === 'off') {
+    if (options.tooltipNoWarnings === 'off') {
       target = null;
-    } else if (options && targetSelectors[options.tooltipNoWarnings]) {
+    } else if (targetSelectors[options.tooltipNoWarnings]) {
       target = targetSelectors[options.tooltipNoWarnings];
     } else {
       target = null;
     }
   }
 
-  let warnAboutMisleadingLinks;
-  if (options && options.misleadingLinks !== undefined) {
-    warnAboutMisleadingLinks = options.misleadingLinks;
-  } else {
-    warnAboutMisleadingLinks = true;
-  }
+  const warnAboutMisleadingLinks = options.misleadingLinks ?? true;
 
   if (!target && !warnAboutMisleadingLinks) {
     return;
